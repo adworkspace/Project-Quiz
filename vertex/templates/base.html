@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERTEX</title>
+    <link rel="icon" type="image/x-icon" href="/static/media/logo.png">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <style>
+        {% block style %}{% endblock style %}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="nav-container">
+
+            <nav id="nav">
+                <img id="logo" src="/static/media/logo.png" width='27px' height='27px' alt="not">
+                <ul class="navbar">
+                    <li><a class="active" href="/" title="Home"><img src="/static/media/home.png" alt="Home" height=30px
+                                width=30px></a></li>
+                    <li><a href="/about" title="About us"><img src="/static/media/about.png" alt="About" height=30px
+                                width=30px></a></li>
+                    <li><a href="/contact" title="Contact us"><img src="/static/media/contact.png" alt="Contact"
+                                height=30px width=30px></a></li>
+                    <li><a href="/signup" title="Signup"><img src="/static/media/signup.png" alt="Signup" height=30px
+                                width=30px></a></li>
+                    <li><a href="/login" title="Login"><img src="/static/media/login.png" alt="Login" width=30px
+                                height=30px></a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+
+
+        {% block body %}
+        {% endblock body %}
+
+
+    </div>
+    <div id="foot">
+        <footer>
+            <div id="foot-grid">
+                <div class="foot-item" id="foot-left">
+                    <h4>Gandhi Institute for Technological Advancement </br>
+                        Plotno: 20230/324 </br>
+                        Badaraghunathpur,Madanpur </br>
+                        Near Gohiria square </br>
+                        Contact No: 9863564623 </br>
+                        Email: vertex@vertex.com</h4>
+                </div>
+                <div class="foot-item">
+                    <ul id="foot-menu">
+                        <li><a href="/" title="Home">Home</a></li>
+                        <li><a href="/about" title="About us">About</a></li>
+                        <li><a href="/contact" title="Contact us">Contact</a></li>
+                        <li><a href="/signup" title="Signup">Signup</a></li>
+                        <li><a href="/login" title="Login">Login</a></li>
+                    </ul>
+                </div>
+                <div class="foot-item" id="foot-right">
+                    <h4>Facebook</h4>
+                    <h4>Twitter</h4>
+                    <h4>Telegram</h4>
+                    <h4>Linkedin</h4>
+                    <h4>Whatsapp</h4>
+                </div>
+            </div>
+
+            <center>
+                <div>
+                    <h3>Vertex©all rights reserved | Developed by trioca</h3>
+                </div>
+            </center>
+        </footer>
+    </div>
+
+
+</body>
+
+</html>

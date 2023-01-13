@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+{% block style %}
+#body-container{
+    margin: 15px 4px ;
+    border: 1px solid red;
+}
+
+.body-grid{
+    display:grid;
+    grid-template-columns: auto auto auto;
+}
+
+.body-item{
+    padding:5px 5px;
+    text-align:center;
+    height:5rem;
+    
+}
+{% endblock style %}
+
+
+
+
+
+
+{% block body %}
+<div id="body-container">
+   <div class="body-grid">
+    <div class="body-item">1</div>
+    <div class="body-item">2</div>
+    <div class="body-item">3</div>
+    <div class="body-item">4</div>
+    <div class="body-item">5</div>
+    <div class="body-item">6</div>
+    <div class="body-item">7</div>
+    <div class="body-item">8</div>
+    <div class="body-item">9</div>
+   </div>
+   <form action="/" method="POST">
+    {% csrf_token %}
+       {% for question in questions %}
+       <h1>{{question.quest}}?</h1>
+       {{question.q_no}}
+       <input type="radio" name="Q" id="1" value="{{question.op_1}}"><label for="1">{{question.op_1}}</label><br>
+       <input type="radio" name="Q" id="2" value="{{question.op_2}}"><label for="2">{{question.op_2}}</label><br>
+       <input type="radio" name="Q" id="3" value="{{question.op_3}}"><label for="3">{{question.op_3}}</label><br>
+       <input type="radio" name="Q" id="4" value="{{question.op_4}}"><label for="4">{{question.op_4}}</label><br>
+       <input type="submit" value="Submit">
+    </form>
+       
+   {% endfor %}
+</div>
+{% endblock body %}
+
