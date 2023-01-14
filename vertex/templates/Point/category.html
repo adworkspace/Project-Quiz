@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+
+{% block style %}
+#body-container{
+    margin: 15px 4px ;
+    border: 1px solid red;
+    background-color: rgb(198, 245, 227);
+}
+
+.body-grid{
+    display:grid;
+    grid-template-columns: auto auto auto;
+}
+
+.body-item{
+    padding:5px 5px;
+    text-align:center;
+   
+    {% comment %} height:5rem; {% endcomment %}   
+}
+.cat-img{
+    padding-top:5px;   
+}
+.cat-item{
+    box-shadow: 4px 4px 6px grey;
+    padding:10px 0px;
+    border-radius: 10px;
+    background-color: rgb(217, 243, 233);
+}
+.cat-img img{
+    height:300px;
+    width:300px;
+    object-fit: cover;
+    padding: 1px 1px;
+    border-radius:5px;
+    
+}
+{% endblock style %}
+
+
+
+
+
+
+{% block body %}
+<div id="body-container">
+    <div class="body-grid">
+    {% for category in categories %}
+        <div class="body-item">
+            <div class="cat-item">
+
+                <div class="cat-img">
+                    <img  src="{{category.cat_img}}" alt="NO IMAGE">
+                </div>
+                <div>
+                    <h2>{{category.cat}}</h2>
+                    <a href="/viewcategory">Checkout the category</a>
+                </div>
+            </div>
+        </div>
+        
+    {% endfor %}
+    </div>
+</div>
+{% endblock body %}
+

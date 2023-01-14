@@ -5,7 +5,8 @@ from django.db import models
 class Category(models.Model):
     sl_no=models.AutoField(primary_key=True)
     cat=models.CharField(max_length=50)
-    parent=models.ForeignKey('self',on_delete=models.CASCADE,null=True)
+    cat_img=models.ImageField(upload_to="static/category_media",blank=True)
+    parent=models.ForeignKey('self',on_delete=models.CASCADE,null=True,blank=True)
 
     def __str__(self):
         return str(self.sl_no) + " " +self.cat
