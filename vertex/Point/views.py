@@ -14,7 +14,14 @@ def about(request):
 def contact(request):
     return render(request,'Point/contact.html')
 def cat(request):
-    return render(request,'Point/category.html')   
+    allcat=Category.objects.all()
+    context={"categories":allcat}
+    return render(request,'Point/category.html',context)   
+
+def quiz(request):
+    return render (request,'Point/quiz.html')
+
+
 def login(request):
     return render(request,'Point/login.html')
 

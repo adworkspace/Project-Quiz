@@ -12,12 +12,57 @@
     overflow: hidden;
 }
 
+#home-exp{
+    text-decoration: none;
+    display:inline-block;
+    background-color: rgb(164, 212, 254);
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid green;
+    color: rgb(18, 130, 164);
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+#home-el-1{
+    margin-top: 20%;
+    padding: 10px;
+    text-align: center;
+}
+#home-el-1 button{
+    color: rgb(16, 103, 133);
+    background-color: rgb(113, 181, 241);
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid lightblue;
+    font-size: 20px;
+}
+
+#search{
+    color: rgb(5, 41, 53);
+    background-color: rgb(218, 233, 246);
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid lightblue;
+    font-size: 20px;
+}
+
+
 {% endblock style %}
 
 {% block body %}
 
 <div id="home-body">
-
+    <div id="home-el-1">
+        <div>
+            <input type="search" name="search" id="search" placeholder="search">
+            <button type="submit">Submit</button>
+        </div>
+        <div>
+            <a href="/category/" id="home-exp">Explore Categories</a>
+        </div>
+        
+    </div>
 </div>
 
 

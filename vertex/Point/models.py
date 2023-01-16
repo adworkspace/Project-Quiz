@@ -11,6 +11,9 @@ class Category(models.Model):
     def __str__(self):
         return str(self.sl_no) + " " +self.cat
 
+    def get_questions(self):
+        return self.question_set.all()
+
 
 class Question(models.Model):
     q_no=models.AutoField(primary_key=True)
