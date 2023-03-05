@@ -16,7 +16,7 @@ class Category(models.Model):
         return str(self.sl_no) + " " +self.cat
 
     def get_questions(self):
-        return self.question_set.all()
+        return self.question_set.all()[:self.number_of_questions]
 
     class Meta:
         verbose_name_plural='Categories'

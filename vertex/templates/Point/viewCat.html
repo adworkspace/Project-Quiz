@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block style %}
+#viewCat{
+    margin-top: 5%;
+   padding: 10px 35%;
+}
+#infor li{
+    list-style: none;
+}
+{% endblock style %}
+{% block body %}
+<div id="viewCat">
+    <div id="infor">
+        <ul>
+            <li>Category of Quiz : <b>{{obj.cat}}</b></li>
+            <li>Total questions : <b>{{obj.number_of_questions}}</b></li>
+            <li>Time for attempting the quiz : <b>{{obj.time}} minutes</b></li>
+            <li>Score required to pass the quiz : <b>{{obj.required_score}}</b></li>
+            <li><a href="/{{obj.cat}}/quiz" value={{obj.cat}} method="GET" name='quiz'>start quiz</a></li>
+        </ul>
+
+    </div>
+</div>
+{%endblock body%}

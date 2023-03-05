@@ -1,13 +1,36 @@
 {% extends 'base.html' %}
 {% block head %}
-<script src="/static/js/quiz.js"></script>
 
 {% endblock head %}
+{% block style %}
+#q{
+    padding:0px 30px;
+    margin:0px 60px;
+}
+
+{% endblock style %}
 
 
 
 
 {% block body %}
 
-This is quiz page
+<div id="q">
+    <form action="/score/" method="POST">
+        {% csrf_token %}
+
+        {% for question in data %}
+        <h3>{{question.quest}}</h3><br>
+        <input type="radio" name="{{question.q_no}}" id="{{question.q_no}}" value='{{question.op_1}}'>
+        <label for="{{question.q_no}}">{{question.op_1}}</label><br>
+        <input type="radio" name="{{question.q_no}}" id="{{question.q_no}}" value='{{question.op_2}}'>
+        <label for="{{question.q_no}}">{{question.op_2}}</label><br>
+        <input type="radio" name="{{question.q_no}}" id="{{question.q_no}}" value='{{question.op_3}}'>
+        <label for="{{question.q_no}}">{{question.op_3}}</label><br>
+        <input type="radio" name="{{question.q_no}}" id="{{question.q_no}}" value='{{question.op_4}}'>
+        <label for="{{question.q_no}}">{{question.op_4}}</label><br>
+        {% endfor %}
+        <input type="submit" value="submit">
+    </form>
+</div>
 {% endblock body %}
